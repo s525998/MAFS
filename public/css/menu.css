@@ -27,7 +27,7 @@ body{
 /*position for the MAFS header text*/
 
 #headerTxt {
-    padding: 0px 0px 20px 25px
+    padding: 0px 0px 20px 30px
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
@@ -92,8 +92,8 @@ body{
 */
 
 .carousel-inner img {
-    width: 82.5%;
-    /* Set width to 82.5% */
+    width: 75.5%;
+    /* Set width to 67.7% */
     margin: auto;
     margin-top: 5px;
     min-height: 200px;
@@ -108,10 +108,19 @@ body{
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .carousel-caption {
         display: none;
     }
+    .officer{
+     float: left;
+    }
+    .mediaBody{
+        clear: left;
+    }
+}
+@media (max-width: 600px) {
+
 }
 
 .content{
@@ -141,7 +150,7 @@ body{
 .officer{
     position: relative;
     visibility: visible;
-    left: 350px;
+    left: 400px;
 }
 .mediaBody{
     position: relative;
