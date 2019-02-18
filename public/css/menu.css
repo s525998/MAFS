@@ -6,36 +6,101 @@ body{
 */
 
 /* Remove jumbotron's default margin-bottom*/
-
+/* #5fe9ee80 */
 .jumbotron {
     margin-bottom: 0;
-    background: #5fe9ee80;
+    background: white;
     margin: 0px;
     padding: 10px 40px 10px 100px;
     font-family: 'Times New Roman', Times, serif;
     font-style: normal;
-    font-size: 45px;
+    font-size: 35px;
 }
+
 
 /* position of logo and image of MAFS */
 
 #logo {
     background-color:#74e5e980; 
-    position: relative;
 }
 
 /*position for the MAFS header text*/
+@media screen and (min-width: 1200px){
+    .headerTxt {
+        padding: 0px 0px 20px 7em;
+        font-size: 30px; 
+    }
+    #logo{
+        height: 120px;
+    }
+    .carousel-inner img {
+        width: 65%;
+        /* Set width to 67.7% */
+        margin: auto;
+        margin-top: 5px;
+        max-height: 25vw;
+        }
 
-#headerTxt {
-    padding: 0px 0px 20px 30px
+    }
+
+
+@media screen and (max-width: 1200px){
+    .headerTxt{
+        padding: 0px 0px 15px 5em;
+        font-size: 20px;
+    }
+    #logo {
+        height: 90px;
+    }
+    
+    .content{
+        font-size: 20px;
+    }
+    .carousel-inner img {
+        width: 77.5%;
+        /* Set width to 67.7% */
+        margin: auto;
+        margin-top: 5px;
+        max-height: 500px;
+        }
+ 
 }
+
+@media screen and (max-width: 900px){
+    .headerTxt{
+        padding: 0px 0px 15px 2em;
+        font-size: 18px;
+    }
+    #logo {
+        height: 75px;
+    }
+    .officer{
+        font-size: 10px;
+        padding-bottom: 5px;
+    
+    }
+    .content{
+        font-size: 10px;
+    }
+    .dropdown-menu{
+        font-size: 0.9em;
+    }
+    .carousel-inner img {
+        width: 77.5%;
+        /* Set width to 67.7% */
+        margin: auto;
+        margin-top: 5px;
+        max-height: 450px;
+        }
+}
+
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 
 .navbar {
     margin-bottom: -0.2em;
     border-radius: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     background-color: #15b6b8;
     border-style: none;
     font-family: Georgia, serif;
@@ -52,6 +117,11 @@ body{
     padding-left: 0;
     padding-right: 0;
 }
+.reg-Form{
+    margin-left: 13em;
+    margin-right: 13em;
+}
+
 
 
 /* .navbar-inverse{
@@ -91,14 +161,14 @@ body{
 /* Navbar CSS END
 */
 
-.carousel-inner img {
-    width: 75.5%;
+/* .carousel-inner img {
+    width: 68%; */
     /* Set width to 67.7% */
-    margin: auto;
+    /* margin: auto;
     margin-top: 5px;
-    min-height: 200px;
+    max-height: 440px;
     
-}
+} */
 
 /* carousel control set to half */
 .carousel-control {
@@ -106,27 +176,50 @@ body{
     bottom: 50%;
   }
 
+  #wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width:960px;
+}
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 900px) {
     .carousel-caption {
         display: none;
     }
+
     .officer{
-     float: left;
+        text-align: left;
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+    .content{
+        font-size: 15px;
     }
     .mediaBody{
         clear: left;
     }
+    .row{
+        clear: both;
+    }
+
 }
+
 @media (max-width: 600px) {
 
 }
 
+div.officer{
+    text-align: center;
+    font-size: 36px;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
 .content{
-    text-align: justify;
     font-family: "Source Sans Pro",Helvetica,sans-serif;
     background-color: #f8f8f880;
+
 }
 
 .rcorners {
@@ -142,27 +235,30 @@ body{
 .ff8300{
     color: #ff8300;
    
+
 }
 .meetingAgenda{
     color:#228B22
 }
 
-.officer{
+/* .officer{
     position: relative;
     visibility: visible;
     left: 400px;
-}
+} */
 .mediaBody{
     position: relative;
     visibility: visible;
     left: 100px;
 }
 
-.memberText{
+/* .memberText{
     position: relative;
     left: 50px;
+} */
+.memberText{
+    padding-left: 2em;
 }
-
 
 
 .b891{
@@ -174,20 +270,92 @@ body{
     color: #0e7f80;
 }
 
-
 /*Newsletter style*/
 
-.nwheader {position: relative;}
-.nwheader img {vertical-align: middle;}
-
-.nwheader .content {
-    position: absolute;
-    bottom: 0;
-    background: rgb(0, 0, 0); /* Fallback color */
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #f1f1f1;
+.jeffCity, .memberSuccess , .legislation, .events{
+    border: 2px solid grey;
+    margin : 1.85em ;
+    overflow-y: auto;
+    box-shadow: 8px 8px #888888;
+    word-break: break-all;
+    transition-property: all;
+    transition-delay: 2s;
+    
+}
+#newShow{
+    position: fixed;
+    display: none;
     width: 100%;
-    padding: 20px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 2;
+    cursor: pointer;
+}
+#jeffCity, #memberSuccess, #legislation{
+        border: 3px solid rgb(32, 30, 30);
+        position: relative;
+        top: 5 em;
+        display: none;
+        margin-top: 2em;
+        margin: auto;
+        word-break: break-all;
+        width:900px;
+        height: 600px;
+      }
+      
+      
+#text{
+        padding : 20px 10px;
+        font-size: 15px;
+        color: whitesmoke;
+        /* transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%); */
+      
+    }
+.textIn{
+    display: block;
+}
+
+@media screen and (max-width: 900px){
+    .jeffCity, .memberSuccess , .legislation, .events{
+        margin: 0.6em;
+    }
+}
+
+.jeffCity{
+    height: 650px;
+
+}
+
+/* .jeffCity:hover{
+    width: 10000px;
+} */
+.legislation,.memberSuccess{
+    height: 400px;
+}
+.events{
+    height: 235px;
+}
+#legisLe, #jeffLe, #memberLe{
+    display: none;
+    float: right;
+}
+#legis, #jeff, #member{
+    float: right;
+}
+
+
+
+.newsHeader{
+    font-size: 13px;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    background:#5fe9ee80;
+    height: 3.5em;
+    padding: 10px 5px;
 }
 
 /* Login CSS */
@@ -262,6 +430,4 @@ body{
     padding: 0;
   }
 
-  .regForm{
-    margin: 80px 100px;
-  }
+ 
