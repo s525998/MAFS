@@ -304,18 +304,27 @@ div.officer{
         margin: auto;
         word-break: break-all;
         width:900px;
-        height: 600px;
+        height: 550px;
+        padding: 10px;
       }
       
       
 #text{
-        padding : 20px 10px;
+        padding : 1em 2em;
         font-size: 15px;
         color: whitesmoke;
         /* transform: translate(-50%,-50%);
         -ms-transform: translate(-50%,-50%); */
       
     }
+
+    #extraJeff, #extraMember, #extraLegis{
+        color: whitesmoke;
+        padding-right: 13em;
+        padding-left: 20em;
+        display: none;
+    }
+    
 .textIn{
     display: block;
 }
@@ -342,7 +351,9 @@ div.officer{
 }
 #legisLe, #jeffLe, #memberLe{
     display: none;
-    float: right;
+    padding:2em;
+    float:right;
+
 }
 #legis, #jeff, #member{
     float: right;
@@ -382,6 +393,8 @@ div.officer{
 
   .login-form .form-group {
     margin-bottom:5px;
+    padding-top:10px;
+    padding-bottom: 5px;
   }
 
   .login-form{ text-align:center;}
@@ -430,4 +443,75 @@ div.officer{
     padding: 0;
   }
 
- 
+
+/* admin */
+.add-con{
+    background: #f0ad4e none repeat scroll 0 0;
+    border-radius: 2.5px;
+  font-size: 13px;
+  height: 35px;
+  line-height: 35px;
+}
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+/* Style sidebar links */
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+/* view */
+/* table, th, td {
+    border: 1px solid black;
+    margin: 7em 10em;
+    width: 75%;
+}
+th ,td{
+    padding: 8px;
+} */
+
+table {
+    margin:6.5em ;
+    border: 1.5px solid black;
+   width: 50%;
+}
+th, td{
+    margin: 5px;
+    border: 1px solid gray;
+    text-align:center;
+
+}
+

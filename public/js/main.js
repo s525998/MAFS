@@ -1,8 +1,8 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-  $('ul.nav li.dropdown').hover(function() {
+  $('ul.nav li.dropdown').hover(function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-  }, function() {
+  }, function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
   });
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
   // function(){
   //   $('.legislation').css({'width': 'initial', 'height':'400px'});
   //   $('.events, .memberSuccess, .jeffCity').stop(true, true).delay(400).fadeIn(100);
- 
+
   // });
 
   // $("#legis").click(function(){
@@ -30,7 +30,7 @@ $(document).ready(function(){
   //   $('.jeffCity, .events, .memberSuccess, #legis, #jeff, #member').show();
   //   });
 
-    
+
   // $("#jeff").click(function(){
   //   $('.legislation, .events, .memberSuccess, #legis, #jeff, #member').hide();
   //   $('.jeffCity').css({'width':'800px', 'height':'50vw'});
@@ -48,7 +48,7 @@ $(document).ready(function(){
   //     $('.memberSuccess').css({'width':'800px', 'height':'50vw'});
   //     $('#memberLe').css({'visibility':'visible'});
   //   });
-  
+
   //     $('#memberLe').click(function(){
   //       $('#memberLe').css({'visibility':'hidden'});
   //       $('.memberSuccess').css({'width': 'initial', 'height':'400px'});      
@@ -56,43 +56,75 @@ $(document).ready(function(){
   //     });
 
 
-    $('#jeff').click(function(){
-      $('.textIn').css({'display':'none'});
-      $('#newShow, #jeffCity, #jeffLe').css({'display':'block'});
-    });
-
-    $('#jeffLe').click(function(){
-        $('#newShow, #jeffCity').css({'display':'none'});
-        $('.textIn').css({'display':'block'});
-    });
-
-    $('#legis').click(function(){      
-      $('.textIn').css({'display':'none'});
-      $('#newShow, #legislation, #legisLe').css({'display':'block'});
-    });
-
-    $('#legisLe').click(function(){
-      $('#newShow, #legislation').css({'display':'none'});      
-      $('.textIn').css({'display':'block'});
-    });
-
-    $('#member').click(function(){      
-      $('.textIn').css({'display':'none'});
-      $('#newShow, #memberSuccess, #memberLe').css({'display':'block'});
-    });
-
-    $('#memberLe').click(function(){
-      $('#newShow, #memberSuccess').css({'display':'none'});      
-      $('.textIn').css({'display':'block'});
-    });
-
-    $('#pdf').click(function() {
-      var options = {
-        };
-      var pdf = new jsPDF('p', 'pt', 'a4');
-      pdf.addHTML($('#jeffCity'), 15, 15, options, function() {
-        pdf.save('jeffCity.pdf');
-      });
-    });
+  $('#jeff').click(function () {
+    $('.textIn').css({ 'display': 'none' });
+    $('#newShow, #jeffCity, #extraJeff,#jeffLe').css({ 'display': 'block' });
   });
+
+  $('#jeffLe').click(function () {
+    $('#newShow, #jeffCity,#extraJeff').css({ 'display': 'none' });
+    $('.textIn').css({ 'display': 'block' });
+  });
+
+  $('#legis').click(function () {
+    $('.textIn').css({ 'display': 'none' });
+    $('#newShow, #legislation, #legisLe, #extraLegis').css({ 'display': 'block' });
+  });
+
+  $('#legisLe').click(function () {
+    $('#newShow, #legislation, #extraLegis').css({ 'display': 'none' });
+    $('.textIn').css({ 'display': 'block' });
+  });
+
+  $('#member').click(function () {
+    $('.textIn').css({ 'display': 'none' });
+    $('#newShow, #memberSuccess, #memberLe, #extraMember').css({ 'display': 'block' });
+  });
+
+  $('#memberLe').click(function () {
+    $('#newShow, #memberSuccess, #extraMember').css({ 'display': 'none' });
+    $('.textIn').css({ 'display': 'block' });
+  });
+
+  // $('#pdf').click(function() {
+  //   var options = {
+  //     };
+  //   var pdf = new jsPDF('p', 'pt', 'a4');
+  //   pdf.fromHTML($('#jeffCity'), 15, 15, options, function() {
+  //     pdf.save('jeffCity.pdf');
+  //   });
+  // });
+
+
+  var doc = new jsPDF();
+  var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+      return true;
+    }
+  };
+
+  $('#pdfJeff').click(function () {
+    doc.fromHTML($('#jeffCity').html(), 15, 15, {
+      'width': 170,
+      'elementHandlers': specialElementHandlers
+    });
+    doc.save('jeffCity.pdf');
+  });
+
+  $('#pdfLegis').click(function () {
+    doc.fromHTML($('#legislation').html(), 15, 15, {
+      'width': 170,
+      'elementHandlers': specialElementHandlers
+    });
+    doc.save('Legislation.pdf');
+  });
+
+  $('#pdfMember').click(function () {
+    doc.fromHTML($('#memberSuccess').html(), 15, 15, {
+      'width': 170,
+      'elementHandlers': specialElementHandlers
+    });
+    doc.save('Member.pdf');
+  });
+});
 

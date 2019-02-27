@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,132 +8,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../public/css/menu.css">
-   
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../public/js/main.js"></script>    
-    </head>
-    
-        <!-- Logo and Text -->
-        <div class="jumbotron">
-                <div class="container-fluid headerTxt">
-                    <img id= "logo" src="../public/images/logo3.png "  height="120">  Missouri Association of Faculty Senates
-                </div>
-            </div>
-        <!-- Navbar -->
-        <nav class="navbar navbar-inverse">
-            <div class="container nav-container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="../index.php">HOME</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+    <script src="../public/js/main.js"></script>
+
+</head>
+
+<!-- Logo and Text -->
+<div class="jumbotron">
+    <div class="container-fluid headerTxt">
+        <img id="logo" src="../public/images/logo3.png " height="120"> Missouri Association of Faculty Senates
+    </div>
+</div>
+<!-- Navbar -->
+<nav class="navbar navbar-inverse">
+    <div class="container nav-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="../index.php">HOME</a>
+                </li>
+                <li class="dropdown">
+                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">ABOUT US
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-background">
+                        <li>
+                            <a href="officers.php">Officers</a>
                         </li>
-                        <li class="dropdown">
-                            <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">ABOUT US
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-background">
-                                <li>
-                                    <a href="officers.php">Officers</a>
-                                </li>
-                                <li>
-                                    <a href="designated_voters.php">Designated Voters</a>
-                                </li>
-                                <li>
-                                    <a href="deafult.html" target="_blank"> Past Officers</a>
-                                </li>
-                                <li>
-                                    <a href="deafult.html" target="_blank">Constitution/ By-Laws</a>
-                                </li>
-                                <li>
-                                    <a href="deafult.html" target="_blank">Proc.Manual</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="designated_voters.php">Designated Voters</a>
                         </li>
-                        <li class="dropdown">
-                            <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">INSTITUTIONS
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-background">
-                                <li>
-                                    <a href="universities.php">Universities</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.mccatoday.org/" target="_blank">Community Colleges</a>
-                                </li>
-                                                            <li>
-                                    <a href="views/deafult.html" target="_blank">Senate Act</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="deafult.html" target="_blank"> Past Officers</a>
                         </li>
-                        <li class="dropdown">
-                            <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">EVENTS
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-background">
-                                <li>
-                                    <a href="meetings.php">Meetings</a>
-                                </li>
-                                <li>
-                                    <a href="reg-Form.php">Member Reg. Form</a>
-                                </li>
-                                <li>
-                            </ul>
+                        <li>
+                            <a href="deafult.html" target="_blank">Constitution/ By-Laws</a>
                         </li>
-                        <li class="dropdown">
-                            <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">RESOURCES
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-background">
-                                <li>
-                                    <a href="https://dhe.mo.gov/" target="_blank">MDHE</a>
-                                </li>
-                                <li>
-                                    <a href="https://dhe.mo.gov/cbhe/" target="_blank">CBHE</a>
-                                </li>
-                                <li>
-                                    <a href="newsTemplates.php">Newsletter Template</a>
-                                </li>
-                                <li>
-                                    <a href="views/deafult.html" target="_blank">Directory</a>
-                                </li>
-                                <li>
-                                    <a href="views/deafult.html" target="_blank">Institution Links</a>
-                                </li>
-                                <li>
-                                    <a href="views/deafult.html" target="_blank">Best Practice</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="deafult.html" target="_blank">Proc.Manual</a>
                         </li>
-                        <li class="dropdown">
-                            <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">ADVOCACY
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-background">
-                                <li>
-                                    <a href="report.php">Report</a>
-                                </li>
-                                <li>
-                                    <a href = "https://www.mhec.org/states/missouri" target="_blank"> Missouri Commissioners</a>
-                                </li>
-                            </ul>
-                        </li>
-          
-                        </ul>
-                        
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
                     </ul>
-                </div>
-            </div>
-        </nav>
-      
-        <!-- Navbar END -->
+                </li>
+                <li class="dropdown">
+                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">INSTITUTIONS
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-background">
+                        <li>
+                            <a href="universities.php">Universities</a>
+                        </li>
+                        <li>
+                            <a href="https://www.mccatoday.org/" target="_blank">Community Colleges</a>
+                        </li>
+                        <li>
+                            <a href="views/deafult.html" target="_blank">Senate Act</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">EVENTS
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-background">
+                        <li>
+                            <a href="meetings.php">Meetings</a>
+                        </li>
+                        <li>
+                            <a href="reg-Form.php">Member Reg. Form</a>
+                        </li>
+                        <li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">RESOURCES
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-background">
+                        <li>
+                            <a href="https://dhe.mo.gov/" target="_blank">MDHE</a>
+                        </li>
+                        <li>
+                            <a href="https://dhe.mo.gov/cbhe/" target="_blank">CBHE</a>
+                        </li>
+                        <li>
+                            <a href="newsTemplates.php">Newsletter Template</a>
+                        </li>
+                        <li>
+                            <a href="views/deafult.html" target="_blank">Directory</a>
+                        </li>
+                        <li>
+                            <a href="views/deafult.html" target="_blank">Institution Links</a>
+                        </li>
+                        <li>
+                            <a href="views/deafult.html" target="_blank">Best Practice</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">ADVOCACY
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-background">
+                        <li>
+                            <a href="report.php">Report</a>
+                        </li>
+                        <li>
+                            <a href="https://www.mhec.org/states/missouri" target="_blank"> Missouri Commissioners</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Navbar END -->
