@@ -1,5 +1,16 @@
 <?php 
+    // Header for the index page
     include('views/Templates/header.html');
+
+    // connecting with the database 
+    include('views/admin/sql.php');
+
+    // Getting all the element from the table named events 
+    $query = "SELECT * FROM `events` ORDER BY CONVERT(Date, DateTime) ASC ";
+    $result = mysqli_query($con,$query);
+
+    $queryAnnouncement ="SELECT * FROM `announcements` WHERE `Type` = 'Announcement' ";
+    $resultAnnouncement = mysqli_query($con,$queryAnnouncement);
 ?>
   <body>
      
@@ -17,21 +28,21 @@
             <div class="item active">
                 <img src="public/images/faculty.jpg" alt="Image"  >
                 <div class="carousel-caption">
-                    <h3 style="text-shadow: gray"><strong>Faculty and Students</strong> </h3>
+                    <h3 style="color: #f5ee06;"><strong>Faculty and Students</strong> </h3>
                 </div>
             </div>
 
             <div class="item">
-                <img src="public/images/TeamWork.jpg" alt="Image" >
+                <img src="public/images/teamwork.jpg" alt="Image" >
                 <div class="carousel-caption">
-                    <h3><strong>Success and Opportunity</strong> </h3>
+                    <h3 style="color: #f5ee06;"><strong>Success and Opportunity</strong> </h3>
                 </div>
             </div>
 
             <div class="item">
                 <img src="public/images/education.jpg" alt="Image" >
                 <div class="carousel-caption">
-                    <h3> <strong>Education and Wisdom</strong> </h3>
+                    <h3 style="color: #f5ee06;"> <strong>Education and Wisdom</strong> </h3>
                   
                 </div>
             </div>
@@ -51,9 +62,10 @@
     <div class="container content">
         <div class="row">
             <div class="col-md-8 card">
+                <!-- Description about the MAFS -->
                 <h2 class="ff8300">About the MAFS</h2>
-              
-                <p class="info">The <b class="b891" style="font-size: 14.5px">Missouri Association of Faculty Senates</b> (MAFS) is composed of the elected senates, councils, or equivalent
+                <div class="info">
+                <p>The <b class="b891" style="font-size: 14.5px">Missouri Association of Faculty Senates</b> (MAFS) is composed of the elected senates, councils, or equivalent
                     groups of the public four-year colleges or universities in the state of Missouri who join. These groups
                     are designated as Associated Senates.</p>
                 <p>MAFS began in February of 1993 when twelve faculty senate officers from seven different four-year public
@@ -82,28 +94,26 @@
                     </li>
                     <li>MAFS works actively with government agencies for the betterment of higher education.</li>
                 </ul>
-            </div>
-            <div class="col-md-4 rcorners card">
-                 <h2 class="ff8300">Announcements</h2>
-                 <p> <b class="b891">Spring Meeting February 11-12, 2019</b>  </p>
-                 <p>We will be staying at the Capitol Plaza Hotel
-                    <a id="link" href="http://www.capitolplazajeffersoncity.com/contactus.aspx">(http://www.capitolplazajeffersoncity.com/contactus.aspx)</a>. When you make your reservations please
-                    mention you are part of the MAFS meeting. The room rate for this meeting is $99. Make certain to tell
-                    them you are with the Missouri Association of Faculty Senates. Your rooms must be reserved by February
-                    2, 2015. After reserving your room, please complete the meeting registration form at
-                    <a href="http://www.mafs.org/MAFSRegForm.asp">http://www.mafs.org/MAFSRegForm.asp</a>.</p>
                 </div>
-            <div class="col-md-4 rcorners card">
-                    <h2 class="ff8300">Events</h2>
-                    <p>
-                    <b class="b891">Fun Events February 11-12, 2019</b>
-                </p>
-                <p>More fun Events at the Capitol Plaza Hotel
-                    <a id="link" href="http://www.capitolplazajeffersoncity.com/contactus.aspx">(http://www.capitolplazajeffersoncity.com/contactus.aspx)</a>. When you make your reservations please
-                    mention you are part of the MAFS meeting. The room rate for this meeting is $99. Make certain to tell
-                    them you are with the Missouri Association of Faculty Senates. Your rooms must be reserved by February
-                    2, 2015. After reserving your room, please complete the meeting registration form at
-                    <a href="http://www.mafs.org/MAFSRegForm.asp">http://www.mafs.org/MAFSRegForm.asp</a>.</p>
+            </div>
+            <div class="col-md-4 rcorners card announcement">
+                <h2 class="ff8300";>Announcements</h2>
+                <?php $rowAnnouncement= mysqli_fetch_array($resultAnnouncement)?>
+                    <p style="font-Size: 14px" ><?php echo $rowAnnouncement['Announcement']; ?> </p>
+             
+                </div>
+                <!-- Upcoming events part of the index page -->
+            <div class="col-md-4 rcorners card events" style = "overflow-y:auto">
+                    <h2 class="ff8300"> Upcoming Events</h2>
+                    <?php  while ($row = mysqli_fetch_array($result)): ?>
+                        <div id="<?php echo $row['EventName']?>"> <p style="float:right; font-size:15px">Date:
+                            <?php  $date = date_create($row['Date']);
+                                echo date_format($date, "M d, Y"); ?> </p> <br>
+                                <span style="font-Size:18px">Events :  <?php echo $row['EventName'];?> </span> <br>
+                            <p  class="eventDetail"style="font-Size: 13px" > <?php echo $row['EventDetails']; ?> </p>
+                            <hr style ="border: .5px solid">
+                         </div> 
+                    <?php endwhile;?>
             </div>
                     </div>
     </div>

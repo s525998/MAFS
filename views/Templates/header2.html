@@ -4,6 +4,8 @@
 
 <head>
     <title>MAFS</title>
+
+      <!-- all the required CDN -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,11 +19,11 @@
 </head>
 
 <!-- Logo and Text -->
-<div class="jumbotron">
+<!-- <div class="jumbotron">
     <div class="container-fluid headerTxt">
-        <img id="logo" src="../public/images/logo3.png " height="120"> Missouri Association of Faculty Senates
+        <img id="logo" src="../public/images/logo.jpg " height="120"> Missouri Association of Faculty Senates
     </div>
-</div>
+</div> -->
 <!-- Navbar -->
 <nav class="navbar navbar-inverse">
     <div class="container nav-container">
@@ -34,8 +36,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="../index.php">HOME</a>
+            
+                <li>
+                    <a href="../index.php">HOME PAGE</a>
                 </li>
                 <li class="dropdown">
                     <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">ABOUT US
@@ -49,14 +52,23 @@
                             <a href="designated_voters.php">Designated Voters</a>
                         </li>
                         <li>
-                            <a href="deafult.html" target="_blank"> Past Officers</a>
+                            <a href="constitution.php">Constitution / By-Laws</a>
                         </li>
                         <li>
-                            <a href="deafult.html" target="_blank">Constitution/ By-Laws</a>
+                            <a href="newsTemplates.php">Newsletter Template</a>
                         </li>
-                        <li>
-                            <a href="deafult.html" target="_blank">Proc.Manual</a>
+                        <li class="dropdown">
+                            <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">Past Officer
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-background">
+                                <li><a  href="pastOfficers.php">President</a></li>
+                                <li><a  href="pastVicePresident.php">Vice President</a></li>
+                                <li><a  href="pastMemberAtLarge.php">Member At Large</a></li>
+                                <li><a  href="pastSecretary.php">Secretary/Treasurer</a></li>
+                            </ul>
                         </li>
+                            
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -67,50 +79,18 @@
                         <li>
                             <a href="universities.php">Universities</a>
                         </li>
-                        <li>
-                            <a href="https://www.mccatoday.org/" target="_blank">Community Colleges</a>
-                        </li>
-                        <li>
-                            <a href="views/deafult.html" target="_blank">Senate Act</a>
-                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">EVENTS
+                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">LEGISLATION
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-background">
                         <li>
-                            <a href="meetings.php">Meetings</a>
+                            <a href="billTracking.php">Bill Tracking Site</a>
                         </li>
                         <li>
-                            <a href="reg-Form.php">Member Reg. Form</a>
-                        </li>
-                        <li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">RESOURCES
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-background">
-                        <li>
-                            <a href="https://dhe.mo.gov/" target="_blank">MDHE</a>
-                        </li>
-                        <li>
-                            <a href="https://dhe.mo.gov/cbhe/" target="_blank">CBHE</a>
-                        </li>
-                        <li>
-                            <a href="newsTemplates.php">Newsletter Template</a>
-                        </li>
-                        <li>
-                            <a href="views/deafult.html" target="_blank">Directory</a>
-                        </li>
-                        <li>
-                            <a href="views/deafult.html" target="_blank">Institution Links</a>
-                        </li>
-                        <li>
-                            <a href="views/deafult.html" target="_blank">Best Practice</a>
+                            <a href="https://www.mnea.org/missouri/legislativeUpdates.aspx" target="_blank">MNEA</a>
                         </li>
                     </ul>
                 </li>
@@ -120,21 +100,53 @@
                     </a>
                     <ul class="dropdown-menu dropdown-background">
                         <li>
-                            <a href="report.php">Report</a>
+                            <a href="https://dhe.mo.gov/cbhe/" target="_blank">CBHE</a>
+                        </li>
+                        <li>
+                            <a href="https://dhewd.mo.gov/" target="_blank">MDHE-WD</a>
+                        </li>
+                        <li>
+                            <a href="https://www.cophe.org/" target ="_blank">COPHE</a>
                         </li>
                         <li>
                             <a href="https://www.mhec.org/states/missouri" target="_blank"> Missouri Commissioners</a>
                         </li>
+                        <li>
+                            <a href="https://www.mccatoday.org/" target="_blank">Community Colleges</a>
+                        </li>
                     </ul>
                 </li>
-
+                <li class="dropdown">
+                        <a a class="dropdown-toggle" data-toggle="dropdown" href="#about">MEMBERSHIP
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-background">
+                            <li>
+                                <a href="meetings.php">Meeting</a>
+                            </li>
+                            <li>
+                                    <a href="membership.php">Benefits</a>
+                            </li>
+                            <li>
+                                    <a href="reg-Form.php">Membership Form </a>
+                            </li>
+                        </ul>
+                    </li>
+                <li>
+                <li>
+                        <a href="contactus.php" >CONTACT US</a>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>  Member Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<br>
+
+<img class="mafsLogo" src="../public/images/logo.jpg "  height="80" width="80" style="margin-left:8em;" >
+
 
 <!-- Navbar END -->

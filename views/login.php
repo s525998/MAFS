@@ -1,84 +1,111 @@
+
 <?php
-ob_start();
-include('Templates/header2.html');
-include_once('admin/sql.php');
+    ob_start();
+    session_start();
+
+// including header from Templates Folder
+    include('Templates/header2.html');
+
+// Connecting the database
+    include('admin/sql.php');
+
+// Query that will select all the information from member table
+    $query = "SELECT * FROM `member`";
+    $result = mysqli_query($con,$query);
 
 // echo ("Connection is Successful !!") ;
     $found = false;
     $msg="";
     $msg_type="";
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $username = $_POST['userName'];
+
+// checked if login button is clicked
+if (isset($_POST['login'])){
+   
+// getting username and Passowrd and storing in that varibale
+    $username = $_POST['username'];
     $password = $_POST['password'];
     
-    // if (empty($username)){
-    //     print '<p class="text-error"> Please Enter UserName </p>';
-    // }
-    // if(empty($password)){
-    //     print '<p class="text-error"> Please Enter Password </p>';
-    // }
-
-    $query = "SELECT  * FROM `member`";
-    $result= mysqli_query($con,$query);
+// Checking if above query is working 
     if ($result){
+// Having while loop for the array created from above query
      while ($row = mysqli_fetch_array($result)){
-         if($username == "lsherpa" && $password == "lhakpa123"){
-            $found=false;
-             ob_end_clean();
-             header('Location: admin/admin.php');
+    
+    // This if condition is to check if user is admin 
+        if( $row['UserName'] == $username && $row['Password'] == $password && $row['Position'] == 'Admin'){
+             $_SESSION['isAdmin'] = true;
+           
+             //  render to admin page
+             header('Location: admin/mainPage.php');
              exit();
          }
-       if ( $row['UserName'] == $username && $row['Password'] == $password){
-           $found=false;
-            ob_end_clean();
-            header('Location: default.html');
+    // This if condition is to check if user is member
+        if ( $row['UserName'] == $username && $row['Password'] == $password && $row['Position'] == 'Member'){
+            $_SESSION['isMember'] = true;
+        // Saving the user ID for later user
+            $_SESSION['id'] = $row['ID'];
+            $fullName = $row['First Name'] . $row['Last Name'];
+            $_SESSION['Name'] = $fullName; 
+            
+            // render to member page
+           header('Location: Member/mainPage.php');
            exit();
        }
-   }
-   $found=true;
-   $msg = "Incorrect Username or Password";
-   $msg_type = "warning";
+
+// If either UserName or password or both are incorrect then show below message in login page
+    $found=true;
+    $msg = "Incorrect Username or Password";
+    $msg_type = "warning";
+    }
+ 
 }
 }
 ?>
 
 
 <div class="container">
-    
+
+<!-- This was declared above to know either userName or password or both are incorrect -->
     <?php if($found): ?>
+
+    <!-- If found is true then we will print the following message -->
    <div class= "alert alert-<?php echo $msg_type; ?>" style="text-align:center">
     <?php echo $msg; ?>
     </div>
-    <?php endif; ?>
+    <?php endif ?>
 
+<!-- lOGIN FORM -->
     <h1 class="form-heading">login Form</h1>
     <div class="login-form">
     <div class="main-div">
         <div class="panel">
-       <h2>Member Login</h2>
-       <p>Please enter your User Name and password to login</p>
-       </div>
-        <form id="Login" action="login.php" method="POST" >
+            <h2>Member Login</h2>
+            <p>Please enter your User Name and password to login</p>
+        </div>
+
+        <form id="Login" action="login.php" method="POST">
     
             <div class="form-group">
-    
-    
-                <input type="text" name="userName" class="form-control" id="inputUsername" placeholder="User Name" required>
-    
+                <!-- Username field  -->
+                <input type="text"  name="username" class="form-control" id="inputUsername" placeholder="User Name" required>
             </div>
     
             <div class="form-group">
-    
+                <!-- Password field  -->
                 <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
     
             </div>
-        
-            <button type="submit" class="btn btn-primary">Login</button>
-    
-        </form>
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary" name="login">Login</button>
+            <br>
+            <br>
+            <br>
+            <div>
+                <b style="font-size:14px;">Important</b>: If you cannot login or forget password then you need to contact executive member for password.
             </div>
+        </form>
         </div>
-        </div>
+    </div>
+</div>
 
 <!-- Footer -->
     <footer style="margin-top:2em; text-align:center" class="footer">

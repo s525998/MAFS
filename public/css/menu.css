@@ -24,17 +24,67 @@ body{
     background-color:#74e5e980; 
 }
 
+.mafsLogo:hover{
+    position:relative;
+    top: 25px;
+    left: 35px;
+    width:200px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+.carouselText {
+    color : #f5ee06;
+}
+#mafsTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left:10em;
+  }
+  
+  #mafsTable td, #mafsTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  #mafsTable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #mafsTable tr:hover {background-color: #ddd;}
+  
+  #mafsTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    position: center;
+  }
 /*position for the MAFS header text*/
 @media screen and (min-width: 1200px){
     .headerTxt {
-        padding: 0px 0px 20px 7em;
-        font-size: 30px; 
+        padding: 0px 0px 10px 7em;
+        font-size: 25px; 
     }
     #logo{
         height: 120px;
     }
     .carousel-inner img {
-        width: 65%;
+        width: 45%;
         /* Set width to 67.7% */
         margin: auto;
         margin-top: 5px;
@@ -57,43 +107,14 @@ body{
         font-size: 20px;
     }
     .carousel-inner img {
-        width: 77.5%;
+        width: 70%;
         /* Set width to 67.7% */
         margin: auto;
         margin-top: 5px;
-        max-height: 500px;
+        max-height: 50vw;
         }
  
 }
-
-@media screen and (max-width: 900px){
-    .headerTxt{
-        padding: 0px 0px 15px 2em;
-        font-size: 18px;
-    }
-    #logo {
-        height: 75px;
-    }
-    .officer{
-        font-size: 10px;
-        padding-bottom: 5px;
-    
-    }
-    .content{
-        font-size: 10px;
-    }
-    .dropdown-menu{
-        font-size: 0.9em;
-    }
-    .carousel-inner img {
-        width: 77.5%;
-        /* Set width to 67.7% */
-        margin: auto;
-        margin-top: 5px;
-        max-height: 450px;
-        }
-}
-
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 
@@ -122,6 +143,30 @@ body{
     margin-right: 13em;
 }
 
+/* .list{
+    font-size: 20px;
+
+}
+.lists{
+    font-size: 35px;
+    margin-left: 18em;
+    padding-left: 4.5em;
+} */
+.straAction{
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2em;
+    margin-left: 3em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.mafsAction{
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-left: 3.5em;
+}
 
 
 /* .navbar-inverse{
@@ -156,6 +201,13 @@ body{
     .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
         color: #000;
     }
+}
+
+#name{
+  opacity: 1;
+  transition: 1s opacity;
+  text-align: center;
+  font-size:32px;
 }
 
 /* Navbar CSS END
@@ -234,6 +286,7 @@ div.officer{
 
 .ff8300{
     color: #ff8300;
+    font-size: 24px;
    
 
 }
@@ -260,27 +313,45 @@ div.officer{
     padding-left: 2em;
 }
 
+#btn{
+  font-size: 15px;
+}
 
 .b891{
+    
     color: #15b891;
     size:35px;
 }
 
+.eventTable{
+  font-size: 13px;
+}
 .e7f80{
     color: #0e7f80;
 }
 
 /*Newsletter style*/
 
-.jeffCity, .memberSuccess , .legislation, .events{
+.jeffCity, .memberSuccess , .legislation {
     border: 2px solid grey;
     margin : 1.85em ;
     overflow-y: auto;
     box-shadow: 8px 8px #888888;
-    word-break: break-all;
+    word-break: break-word;
+    line-height: 1.8;
     transition-property: all;
     transition-delay: 2s;
-    
+    height:50px;
+  
+}
+.events{
+    border: 2px solid grey;
+    overflow-y: auto;
+    box-shadow: 8px 8px #888888;
+    word-break:break-word;
+    line-height: 1.8;
+    transition-property: all;
+    transition-delay: 2s;
 }
 #newShow{
     position: fixed;
@@ -303,16 +374,18 @@ div.officer{
         margin-top: 2em;
         margin: auto;
         word-break: break-all;
-        width:900px;
-        height: 550px;
+        line-height: 2;
+        width:90%;
+        height: 90%;
         padding: 10px;
       }
       
       
-#text{
+#newsText{
         padding : 1em 2em;
         font-size: 15px;
         color: whitesmoke;
+        word-wrap: break-word;
         /* transform: translate(-50%,-50%);
         -ms-transform: translate(-50%,-50%); */
       
@@ -336,7 +409,7 @@ div.officer{
 }
 
 .jeffCity{
-    height: 650px;
+    height: 550px;
 
 }
 
@@ -344,10 +417,10 @@ div.officer{
     width: 10000px;
 } */
 .legislation,.memberSuccess{
-    height: 400px;
+    height: 550px;
 }
 .events{
-    height: 235px;
+    height: 250px;
 }
 #legisLe, #jeffLe, #memberLe{
     display: none;
@@ -359,10 +432,15 @@ div.officer{
     float: right;
 }
 
+.announcement{
+  height:300px;
+  overflow-y: auto;
+  word-break:break-word;
+}
 
 
 .newsHeader{
-    font-size: 13px;
+    font-size: 16px;
     font-family:Georgia, 'Times New Roman', Times, serif ;
     background:#5fe9ee80;
     height: 3.5em;
@@ -378,7 +456,7 @@ div.officer{
   background: #f7f7f7 none repeat scroll 0 0;
   border: 1px solid #d4d4d4;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 18px;
   height: 50px;
   line-height: 50px;
 }
@@ -386,15 +464,28 @@ div.officer{
 .main-div {
     background: #ffffff none repeat scroll 0 0;
     border-radius: 2px;
-    margin: 10px auto 30px;
-    max-width: 38%;
-    padding: 50px 70px 70px 71px;
+    margin: 10px auto .5px;
+    max-width: 40%;
+    padding: 35px 50px 5px 50px;
+    font-size:16px;
   }
+  .eventTable{
+    margin-left:20em;
+  }
+
+  .mafs-div{
+    background: #ffffff none repeat scroll 0 0;
+    margin: 10px auto 5px;
+     max-width: 75%;
+    padding:  10px;
+  }
+
 
   .login-form .form-group {
     margin-bottom:5px;
     padding-top:10px;
     padding-bottom: 5px;
+    font-size: 15.5px;
   }
 
   .login-form{ text-align:center;}
@@ -479,6 +570,21 @@ div.officer{
   color: #f1f1f1;
 }
 
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+
 /* Style the main content */
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
@@ -486,9 +592,9 @@ div.officer{
 }
 
 /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+@media screen and (max-height: 500px) {
+  .sidebar {max-height: 10px;}
+  .sidebar a {font-size: 8px;}
 }
 
 
@@ -505,13 +611,236 @@ th ,td{
 
 table {
     margin:6.5em ;
-    border: 1.5px solid black;
-   width: 50%;
+    /* border: 1.5px solid black; */
+    border: 1.5px solid black; 
+   width: 90%;
+
+}
+
+table.Border{
+  width: 75%;
 }
 th, td{
     margin: 5px;
-    border: 1px solid gray;
+    border:  1px solid black; 
     text-align:center;
+}
+
+td{
+    margin: 5px;
+    border: 0.8px solid black;  
+    text-align:center;
+}
+td.replyTd{
+    margin: 5px;
+    border: 0.8px solid black;  
+    text-align:left;
+}
+
+p.reply{
+    float: left; 
+    font-size: 14px;
+     padding-top: 10px; 
+     padding-left: 20px;
+}
+p.content{
+    font-size: 15px;
+     padding-top: 10px;
+     padding-left: 14px;
+}
+.mafsTable{
+    margin: 7.5em;
+    border: 1.5px solid black;
+   width: 90%;
+   text-align:center;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* Add an active class to the active dropdown button */
+.active {
+    color: white;
+  }
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+
+  /* wrapping word in the event box */
+  .eventDetail{
+ word-wrap: break-word;
+  }
+
+  .passwordDetail{
+      padding-top: 2em;
+      padding-bottom: 1.5em;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: inherit;
+      font-display: center;
+      color: lightseagreen;
+  }
+
+  .allReport{
+      margin-left: 3em;
+      padding-left: 4em;
+      margin-top: auto;
+      padding-top: 10px;
+      padding-bottom: 5px;
+  }
+
+  /* pos div of post.php */
+  .post-div{
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 2px;
+    margin: 10px auto .5px;
+    max-width: 60%;
+    padding: 15px 40px 15px 40px;
+  }
+
+  .jeffNews, .legNews, .bestPrac, .announce{
+      padding: 7px 8px 8px 10px;
+  }
+
+  .Post{
+    float: right;
+  }
+
+  .postGroup{
+      padding: 20px 15px;
+      font-size:19px;
+  }
+
+  .intro{
+      font-size: 13px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .agendaMinute{
+    border: 2px solid grey;
+    overflow-y: auto;
+    box-shadow: 8px 8px #888888;
+    word-break: break-all;
+    line-height: 1.8;
+    transition-property: all;
+    transition-delay: 2s;
+    height: 10em;
+}
+
+.description{
+    font-size: 15px;
+    padding-top: 1.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+.list{
+    font-size: 14px;
+    padding-top: 12px;
 
 }
 
+.list1{
+    padding-top:8px;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
