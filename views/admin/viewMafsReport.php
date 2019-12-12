@@ -1,6 +1,6 @@
 <?php
     // needed for connection of database which is contain in sql.php
-    include_once('sql.php');
+    include_once('ProcessEvent.php');
 
     session_start();
 
@@ -22,13 +22,13 @@
     }
 
     // number of recrod to display in a page
-    $no_of_records_per_page = 5;
+    $no_of_records_per_page = 8;
 
     // used in Limit method in query
     $offset = ($pageno-1) * $no_of_records_per_page;
 
     // this query will display total record in given table
-    $total_pages_sql = "SELECT COUNT(*)FROM `meeting_report`";
+    $total_pages_sql = "SELECT COUNT(*)FROM `mafsfile`";
     // executng above query
     $result = mysqli_query($con,$total_pages_sql);
 
@@ -40,12 +40,25 @@
 
   
     /* This query is selecting all data from table 'meeting_report' which is order by ID(report-id) in descending order */
-    $queryReport ="SELECT * FROM `meeting_report` ORDER BY `ID` DESC LIMIT $offset, $no_of_records_per_page";
+    $queryReport ="SELECT * FROM `mafsfile` ORDER BY `id` DESC LIMIT $offset, $no_of_records_per_page";
 
     // run the above query 
     $resultReport = mysqli_query($con,$queryReport);   
 
 ?>
+<?php
+      // check if 'messageEvent' is empty or not
+        if (isset($_SESSION['mafsMsg'])):
+    ?>
+      <!-- retrieving 'msg_type' value -->
+    <div class= "alert alert-<?= $_SESSION['msg_type']; ?>" style="text-align:center">
+
+    <?php 
+         //displaying messageEvent 
+        echo $_SESSION['mafsMsg']; 
+        unset ($_SESSION['mafsMsg']); ?>
+</div>
+<?php endif?>
 <div class = "row">
     <div class="col-sm-2 col-md-1"></div>
     <div class="col-sm-10 col-md-10">
@@ -57,8 +70,8 @@
         <th> Name</th>
         <th>University</th>
         <th>File </th>
-        <th>Note</th>
         <th>Submitted On</th>
+        <th> Action </th>
 
     </tr>
     </thead>
@@ -70,19 +83,21 @@
         if ($file == null){
             break;
         }
-        $files_show= "../../uploadFile/meetingReports/$file"; ?>
+        $files_show= "../../uploadFile/mafsReports/$file"; ?>
     <tr>
     <!-- For each loop, It display a row with name, university, fileName, Note and submission date -->
         <td><?php echo $row['Name']; ?></td>
         <td><?php echo $row['University']; ?></td>
 
 <!-- When user click the File Name it will link to file location which will download the file -->
-        <td><a target="_blank" href="<?php echo $files_show;?>"><?php echo $row['File'];?> </a> </td>
-        <td><?php echo $row['Note']; ?></td>
+        <td><a href="<?php echo $files_show;?>" target="_blank"><?php echo $row['File'];?> </a> </td>
         
         <!-- Format the date in Month Date, Year -->
         <td>  <?php $date = date_create($row['Date']);
             echo date_format($date, "M d, Y");?></td>
+        <td>
+            <a href="ProcessEvent.php?id=<?php echo $row['id'];?>&Name=<?php echo $row['Name'];?>&file=<?php echo $file?>" class="btn btn-danger" id="btn"> Delete </a>
+        </td>
     </tr>
     <!-- closing while condition -->
 <?php endwhile; ?>

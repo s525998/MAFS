@@ -15,7 +15,6 @@
      $result= mysqli_query($con,$queryEvent);
 ?>
 
-
 <div class="container-fliud">
     <?php
       // check if 'messageEvent' is empty or not

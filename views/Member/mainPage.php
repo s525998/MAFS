@@ -37,7 +37,7 @@
                 Strategic Plan – View the current Higher Ed and Missouri Association of Faculty Senate (MAFS) strategic plan. 
                 </li>
                 <li class="list">
-                MAFS Reports - Members will report action on the five strategic areas here. Click on the area you want to report for the entry box. Each member institution should report for each Strategic Action.
+                MAFS Reports - Members can submit the MAFS report via the website. Member are required to fill out all the text boxes and upload their MAFS report in pdf or docx format.
                 </li>
                  <li class="list">
                 	Meeting Reports- Members can submit institution meeting reports via the website.  Member are required to fill out all the text boxes and upload their report in pdf or docx format.

@@ -52,6 +52,7 @@
                                     <?php if(!($vacantPres)):?>                                
                                             <h4 class="b891"><?php echo($rowPres['Officer_Name'])?></h4>
                                             <p class="memberText"><?php echo($rowPres['E-Mail'])?></p>
+                                            <p class="memberText">pres@MAFS.org</p>
                                     <?php else:?>
                                     <!-- If information is not available then just show vacant -->
                                         <h5 class="b891">Vacant</h5>
@@ -72,6 +73,7 @@
                                     <?php if(!($vacantVPres)):?> 
                                         <h4 class="b891"><?php echo($rowVPres['Officer_Name'])?></h4>
                                         <p class="memberText"><?php echo($rowVPres['E-Mail'])?></p>
+                                        <p class="memberText">vp@MAFS.org</p>
                                     <?php else:?>
                                     <!-- If information is not available then just show vacant -->
                                         <h5 class="b891">Vacant</h5>
@@ -99,6 +101,7 @@
                                         <?php if(!($vacantSTres)):?> 
                                         <h4 class="b891"><?php echo($rowSTres['Officer_Name'])?></h4>
                                             <p class="memberText"><?php echo($rowSTres['E-Mail'])?></p>
+                                            <p class="memberText">MAL@MAFS.org</p>
                                         <?php else:?>
                                     <!-- If information is not available then just show vacant -->
                                             <h5 class="b891">Vacant</h5>
@@ -120,6 +123,7 @@
                                     <?php if(!($vacantMemLarge)):?> 
                                     <h4 class="b891"><?php echo($rowMemLarge['Officer_Name'])?></h4>
                                         <p class="memberText"><?php echo($rowMemLarge['E-Mail'])?></p>
+                                        <p class="memberText">secretary@MAFS.org</p>
                                     <?php else:?>
                                 <!-- If information is not available then just show vacant -->
                                         <h5 class="b891">Vacant</h5>

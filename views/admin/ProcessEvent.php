@@ -159,3 +159,33 @@
          // render to viewReport.php and sending ID and $next and $previous using GET method
         header("location: viewReport.php?ID={$id}&Next={$next}&Previous={$previous}");
     }
+
+// check if idEvent is empty or not
+if(isset($_GET['id'])){
+
+  // Store all the information which was send using GET method to store in created variable 
+  $id = $_GET['id'];
+  $name = $_GET['Name'];
+  $fileName = $_GET['file'];
+
+  // delete event from PastEmployee table of eventID passes using GET method
+  $deleteReport = "DELETE FROM `mafsfile` WHERE `id` = $id ";
+
+  $result = mysqli_query($con,$deleteReport);
+
+  // check if above query has any problem execting 
+  if ($result){
+        // Store messageEvent and msg_type with successfull message
+        $_SESSION['mafsMsg'] ="$fileName of $name has been deleted";
+        $_SESSION['msg_type'] = "success";
+    }   
+    else{
+         // Store messageEvent and msg_type with unsuccessfull message
+        $_SESSION['mafsMsg'] ="Could not delete Minute and Agenda of $fileName";
+        $_SESSION['msg_type'] = "warning";          
+  }
+
+  header('location: viewMafsReport.php');
+}
+  
+?>

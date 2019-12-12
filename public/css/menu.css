@@ -311,6 +311,7 @@ div.officer{
 } */
 .memberText{
     padding-left: 2em;
+    font-size:17px;
 }
 
 #btn{
@@ -616,6 +617,8 @@ table {
    width: 90%;
 
 }
+
+.memberText
 
 table.Border{
   width: 75%;

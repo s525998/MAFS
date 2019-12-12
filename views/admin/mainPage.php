@@ -38,18 +38,38 @@
                     The bottom of the page contains a table with a detailed list of all events posted on the website with the option to edit or delete them, if necessary. 
                 </li>
                 <li class="list">
-                    Post Info – Post the information for “News” template (Jeff City News, Legislations Update, Best Practices and announcements).
-                     You can also upload pdf or docx file rather than text.
+                    News Templates – Post the information for “News” template (Jeff City News, Legislations Update, Best Practices and announcements).
+                     You can only upload pdf.
+                     <ol type="i"> 
+                        <li class="list1">Upload Info – Upload <b>only</b> pdf file for the (Jeff City News, Legislations Update, Best Practices) and 
+                                                        for the announcement admin can either upload pdf or add the text. 
+                        </li>
+                        <li class="list1">Delete Info - Admin can delete the file if he/she had uploaded wrong pdf file or admin can just delete if not required in News Templates page. </li>
+                    </ol>
                 </li>
                 <li class="list">
                     Current Officer – To update the information of officer if there is any change in the current officer. You are require to select the position and add info for new officer with respect to their position.
                     You can also update the image of the officer and all this will be updated in the website.
                 </li>
                  <li class="list">
-                    Past employee- When this tab is clicked, it provides you with two options
+                    Past Officer- When this tab is clicked, it provides you with two options
                     <ol type="i"> 
                         <li class="list1">Add tab – Enter information of outgoing officers. Click on Add to post in website about past employee information.</li>
                         <li class="list1">Update/Delete - List of past officers with their detailed information. Again, admin will be provided option to edit if any error is made.</li>
+                    </ol>
+                </li>
+                <li class="list">
+                    University- When this tab is clicked, it provides you with two options
+                    <ol type="i"> 
+                        <li class="list1">Add – Admin can add the new university information with faculty link whether it is member or non-member list of MAFS.</li>
+                        <li class="list1">Update/Delete - Admin can delete the university from the list or update their information and changes will be seen in University tab in website.</li>
+                    </ol>
+                </li>
+                <li class="list">
+                    Designated Voter- When this tab is clicked, it provides you with two options
+                    <ol type="i"> 
+                        <li class="list1">Add – Admin can add Designated Voter name with University name and every University is provided with two designated voter name to be filled.</li>
+                        <li class="list1">Update/Delete - Admin can delete the university from the list or update their designated voter name of specific University and changes will be seen in Designated Voter tab in website.</li>
                     </ol>
                 </li>
                 <li class="list">

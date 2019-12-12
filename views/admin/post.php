@@ -40,6 +40,7 @@
                             <label class="b891" for="exampleFormControlFile1">Upload file</label>
                             <input type="file"  id="report" name="jeffNewsFile">
                     </div> 
+                     <p>Post only PDF file. </p>
                 <button type = "Submit" name="jeffNewsPost" class ="Post">Post</button>
             </div>
 
@@ -49,8 +50,8 @@
                 <div class="form-group"> 
                             <label class="b891" for="exampleFormControlFile1">Upload file</label>
                             <input type="file"  id="report" name="legNewsFile">
-                </div> 
-                <?php echo $_SESSION['legName'];?>
+                </div>
+                <p>Post only PDF file. </p>
                 <button type = "Submit" name="legNewsPost" class ="Post">Post</button>
             </div>
 
@@ -61,6 +62,7 @@
                             <label class="b891" for="exampleFormControlFile1">Upload file</label>
                             <input type="file"  id="report" name="bestPracFile">
                 </div> 
+                     <p>Post only PDF file. </p>
                 <button type = "Submit" name="bestPracPost" class ="Post">Post</button>
             </div>
 
